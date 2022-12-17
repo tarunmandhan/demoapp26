@@ -15,16 +15,11 @@ const App = () => {
     setInputList(" ");
   };
 
-  const deleteItems = (id) => {
-    console.log("deleted");
-  };
+   const deleteItems = () => {
+     console.log("deleted");
+   };
+   
 
-  setItems((oldItems) => {
-    return oldItems.filter((arrElem, index) => {
-      return index !== id;
-    });
-  });
- 
   return (
     <>
       <div className="main_div">
@@ -43,14 +38,7 @@ const App = () => {
           <ol>
             {/* <li>{inputList}</li> */}
             {items.map((itemval, index) => {
-              return (
-                <ToDoList
-                  keys={index}
-                  id={index}
-                  text={itemval}
-                  onSelect={deleteItems}
-                />
-              );
+              return <ToDoList keys={index} id={index} text={itemval} onSelect={deleteItems}   />;
             })}
           </ol>
         </div>
